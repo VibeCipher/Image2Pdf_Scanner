@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-pdf"></i> Document Scanner</h1>
+            <p>Upload images to create high-quality scanned PDFs</p>
+        </header>
+
+        <div class="card">
+            <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+                <div class="file-upload-container">
+                    <div class="file-upload-area" id="drop-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & drop images here or click to browse</p>
+                        <input type="file" name="files[]" id="file-input" multiple accept="image/*" style="display:none;">
+                        <button type="button" id="browse-button" class="btn secondary">Browse Files</button>
+                    </div>
+                    <div id="file-list" class="file-list"></div>
+                </div>
+
+                <div class="options-container">
+                    <div class="option-group">
+                        <label for="enhance-mode">Enhancement Mode:</label>
+                        <select name="enhance_mode" id="enhance-mode" class="select-input">
+                            <option value="normal">Normal (Preserve Colors)</option>
+                            <option value="adaptive">Adaptive (High Contrast B&W)</option>
+                            <option value="otsu">Otsu (Clear Text B&W)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button type="submit" id="submit-button" class="btn primary" disabled>
+                        <i class="fas fa-magic"></i> Scan and Create PDF
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF Creation</h3>
+                <p>Convert your images to professional PDF documents</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-image"></i>
+                <h3>Multiple Formats</h3>
+                <p>Support for JPG, PNG, BMP, and TIFF images</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-sliders-h"></i>
+                <h3>Enhancement Options</h3>
+                <p>Choose from different enhancement modes for best results</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 Document Scanner</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+opencv-python
+numpy
+img2pdf
+Pillow
+scikit-image
+flask
+python-magic-bin
+reportlab
+werkzeug
