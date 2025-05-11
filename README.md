@@ -22,7 +22,7 @@ A document scanning application with advanced image processing capabilities and 
 ## Installation
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/document-scanner.git
+git clone https://github.com/VibeCipher/Image2Pdf_Scanner.git
 cd document-scanner
 ```
 2. Install the required dependencies:
